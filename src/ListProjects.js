@@ -26,6 +26,11 @@ class ListProjects extends Component {
       .catch(err => console.log(err.message)); // eslint-disable-line
   }
 
+
+  componentWillUnmount() {
+    this.isCancelled = true;
+  };
+
   render() {
     return (
       <div>
@@ -34,6 +39,9 @@ class ListProjects extends Component {
           <section className="eight offset-by-two columns">
             <h4>Projects</h4>
           </section>
+          <ul>
+          {this.state.projects.map((proj) => (<li key={proj.node_id}>{proj.name}</li>))}
+          </ul>
         </div>
       </div>
     );

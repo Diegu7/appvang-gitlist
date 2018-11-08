@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Header = () => {
+const Header = (props) => {
   return (
     <div className="header">
       <p className="logo">GitHub Demo Project</p>
